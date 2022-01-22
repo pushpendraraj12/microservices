@@ -1,8 +1,11 @@
 const axios=require('axios')
 const router=require('express').Router();
 let Content=require('../models/content.model')
+require('dotenv').config();
 router.route('/sort').post((req,res)=>{
-    var dlink=req.protocol+'://user_interaction:5001'+'/api/interact/sortbylike';
+    var host=process.env.host;
+    // console.log(host)
+    var dlink=req.protocol+'://'+host+':5001'+'/api/interact/sortbylike';
     axios.get(dlink)
     .then((arr)=>{
         const ar=arr.data;

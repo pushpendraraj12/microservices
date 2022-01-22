@@ -20,6 +20,7 @@ services:
       DB_name: mydb
       DB_URI: mongodb://mongoDB:27017
       HOSTNAME: 0.0.0.0
+      host: user_interaction
     depends_on:
       - mongoDB
   
