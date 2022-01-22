@@ -2,7 +2,7 @@ const axios=require('axios')
 const router=require('express').Router();
 let Content=require('../models/content.model')
 router.route('/sort').post((req,res)=>{
-    var dlink=req.protocol+'://localhost:5001'+'/api/interact/sortbylike';
+    var dlink=req.protocol+'://user_interaction:5001'+'/api/interact/sortbylike';
     axios.get(dlink)
     .then((arr)=>{
         const ar=arr.data;
